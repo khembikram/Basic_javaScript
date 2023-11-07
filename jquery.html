@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery UI Widgets Example</title>
+    <!-- Include jQuery and jQuery UI -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+        /* Style for accordion */
+        .accordion {
+            width: 300px;
+        }
+
+        /* Style for button */
+        .button-container {
+            margin-top: 20px;
+        }
+
+        /* Style for progress bar */
+        .progress-container {
+            margin-top: 20px;
+        }
+
+        /* Style for tabs */
+        .tabs-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>jQuery UI Widgets</h2>
+
+    <!-- Accordion -->
+    <h3>Accordion</h3>
+    <div class="accordion">
+        <h3>Section 1</h3>
+        <div>
+            Content for Section 1
+        </div>
+        <h3>Section 2</h3>
+        <div>
+            Content for Section 2
+        </div>
+    </div>
+
+    <!-- Autocomplete -->
+    <h3>Autocomplete</h3>
+    <input type="text" id="autocomplete">
+
+    <!-- Dialog -->
+    <h3>Dialog</h3>
+    <button id="open-dialog">Open Dialog</button>
+    <div id="dialog" title="Dialog Title">
+        Dialog content goes here.
+    </div>
+
+    <!-- Button -->
+    <h3>Button</h3>
+    <div class="button-container">
+        <button id="ui-button">jQuery UI Button</button>
+    </div>
+
+    <!-- Datepicker -->
+    <h3>Datepicker</h3>
+    <input type="text" id="datepicker">
+
+    <!-- Menu -->
+    <h3>Menu</h3>
+    <div id="menu">
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+
+    <!-- Progress Bar -->
+    <h3>Progress Bar</h3>
+    <div class="progress-container">
+        <div id="progressbar"></div>
+    </div>
+
+    <!-- Tabs -->
+    <h3>Tabs</h3>
+    <div class="tabs-container">
+        <div id="tabs">
+            <ul>
+                <li><a href="#tab-1">Tab 1</a></li>
+                <li><a href="#tab-2">Tab 2</a></li>
+            </ul>
+            <div id="tab-1">
+                Content for Tab 1
+            </div>
+            <div id="tab-2">
+                Content for Tab 2
+            </div>
+        </div>
+    </div>
+
+    <!-- Tooltips -->
+    <h3>Tooltips</h3>
+    <button id="tooltip-button" title="Tooltip Text">Hover me for a tooltip</button>
+
+    <!-- Slider -->
+    <h3>Slider</h3>
+    <div id="slider"></div>
+
+    <!-- Spinner -->
+    <h3>Spinner</h3>
+    <input id="spinner" value="0">
+    
+    <script>
+        $(document).ready(function () {
+            // Accordion
+            $(".accordion").accordion();
+
+            // Autocomplete
+            var availableTags = ["Apple", "Banana", "Cherry", "Date", "Fig"];
+            $("#autocomplete").autocomplete({
+                source: availableTags
+            });
+
+            // Dialog
+            $("#dialog").dialog({
+                autoOpen: false,
+                modal: true
+            });
+            $("#open-dialog").click(function () {
+                $("#dialog").dialog("open");
+            });
+
+            // Button
+            $("#ui-button").button();
+
+            // Datepicker
+            $("#datepicker").datepicker();
+
+            // Menu
+            $("#menu").menu();
+
+            // Progress Bar
+            $("#progressbar").progressbar({
+                value: 50
+            });
+
+            // Tabs
+            $("#tabs").tabs();
+
+            // Tooltips
+            $("#tooltip-button").tooltip();
+
+            // Slider
+            $("#slider").slider();
+
+            // Spinner
+            $("#spinner").spinner();
+        });
+    </script>
+</body>
+</html>
